@@ -1,3 +1,4 @@
+
 package it.polito.tdp.esercizioorm.dao;
 
 import java.sql.Connection;
@@ -47,7 +48,7 @@ public class CorsoDAO {
 		try {
 			Connection conn = ConnectDB.getConnection();
 			PreparedStatement st = conn.prepareStatement(sql) ;
-			st.setInt(1, studente.getMatricola());
+			st.setInt(1, studente.getMatricola());//??????
 			ResultSet res = st.executeQuery() ;
 			
 			while(res.next()) {

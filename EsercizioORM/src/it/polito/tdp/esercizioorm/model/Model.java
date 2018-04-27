@@ -34,7 +34,7 @@ public class Model {
 	}
 	
 	public int getTotCreditiFromStudente(int matricola) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 

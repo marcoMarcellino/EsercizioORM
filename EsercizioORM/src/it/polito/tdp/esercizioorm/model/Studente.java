@@ -15,11 +15,11 @@ public class Studente {
 		corsi = new ArrayList<Corso>();
 	}
 
-	public Studente(int matricola, String nome, String cognome, String cds) {
+	public Studente(int matricola,String cognome,String nome, String cds) {
 		corsi = new ArrayList<Corso>();
 		this.matricola = matricola;
-		this.nome = nome;
 		this.cognome = cognome;
+		this.nome = nome;
 		this.cds = cds;
 	}
 

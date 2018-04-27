@@ -36,5 +36,29 @@ public class StudenteDAO {
 
 		return result;
 	}
+	public int getTotCreditiStudente(Studente s) {
+		
+		String sql = "SELECT SUM(c.crediti) FROM corso as c, iscrizione as i WHERE c.codins = i.codins and i.matricola = ? " ;
+		int u=0;
+		
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			st.setInt(1,s.getMatricola());
+			
+			ResultSet res = st.executeQuery();
+
+			res.next();
+				
+			u+= res.getInt("crediti");
+
+			conn.close();
+			return u;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	  
+	}
 
 }
